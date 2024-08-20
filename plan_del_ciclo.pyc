@@ -1,0 +1,60 @@
+import json
+
+class PlanDelCiclo:
+    def __init__(self):
+        self.plan = {}
+
+    def preguntar(self, pregunta):
+        respuesta = input(pregunta + " ")
+        return respuesta
+
+    def preguntar_numero(self, pregunta):
+        while True:
+            try:
+                respuesta = float(input(pregunta + " "))
+                return respuesta
+            except ValueError:
+                print("Por favor, ingresa un número válido.")
+
+    def recopilar_respuestas(self):
+        preguntas = {
+            "¿Cuál es tu próximo porqué?": self.preguntar,
+            "¿Cuántos inscritos tuyos y del equipo lograste en el ciclo anterior?": self.preguntar_numero,
+            "¿Cuál es tu meta en puntos para este ciclo?": self.preguntar_numero,
+            "¿Cuántos matches hiciste en el ciclo anterior?": self.preguntar_numero,
+            "¿Cuántos matches piensas hacer en el nuevo ciclo?": self.preguntar_numero,
+            "¿Cuánto necesitas ganar este ciclo?": self.preguntar_numero,
+            "¿Cuánto ganaste en el ciclo anterior?": self.preguntar_numero,
+            "¿Cuál es tu meta de posición?": self.preguntar,
+            "¿Cuántos zafiros nuevos planeas lograr?": self.preguntar_numero,
+            "¿Qué habilidades necesitas mejorar?": self.preguntar,
+            "¿Cómo piensas mejorar esas habilidades?": self.preguntar,
+            "¿Cuántos inscritos planeas lograr este ciclo?": self.preguntar_numero,
+            "¿Cuántos puntos planeas lograr este ciclo?": self.preguntar_numero,
+            "¿Cuántos matches planeas lograr este ciclo?": self.preguntar_numero,
+            "¿Cuál es tu meta para esta semana?": self.preguntar,
+            "¿Cuántas citas te comprometes a hacer cada semana?": self.preguntar_numero
+        }
+
+        for pregunta, metodo in preguntas.items():
+            respuesta = metodo(pregunta)
+            self.plan[pregunta] = respuesta if respuesta else "No respondido"
+
+    def generar_resumen(self):
+        resumen = "\nResumen del Plan del Ciclo:\n"
+        for pregunta, respuesta in self.plan.items():
+            resumen += f"{pregunta}: {respuesta}\n"
+        return resumen
+
+    def guardar_resumen(self, filename="plan_del_ciclo.json"):
+        with open(filename, 'w') as f:
+            json.dump(self.plan, f, indent=4)
+        print(f"Resumen guardado en {filename}")
+
+if __name__ == "__main__":
+    plan_ciclo = PlanDelCiclo()
+    plan_ciclo.recopilar_respuestas()
+    resumen = plan_ciclo.generar_resumen()
+    print(resumen)
+    plan_ciclo.guardar_resumen()
+
