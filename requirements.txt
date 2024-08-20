@@ -1,25 +1,5 @@
-# Streamlit dependencies
-streamlit==1.37.1
-pydeck==0.9.1
-protobuf==5.27.3
-
-# Data processing
-pandas==2.2.2
-numpy==2.1.0
-openpyxl==3.1.5
-pyarrow==17.0.0
-
-# Visualization
-altair==5.4.0
-pillow==10.4.0
-
-# Utilities
-requests==2.32.3
-python-dateutil==2.9.0.post0
-pytz==2024.1
-setuptools==73.0.0
-
-# Other dependencies
-blinker==1.8.2
-tenacity==8.5.0
+streamlit
+pandas
+altair
+openpyxl
 
