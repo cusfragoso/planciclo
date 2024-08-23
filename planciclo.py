@@ -17,6 +17,7 @@ class PlanDelCiclo:
             "¿Cuál es tu meta de posición?",
             "¿Cuántos zafiros nuevos planeas lograr?",
             "¿Qué habilidades necesitas mejorar?",
+            "¿Qué media docena de cosas, si las cambiaras, mejorarían radicalmente tus resultados? (separa cada una con una coma)", #esto se agregó en V2
             "¿Cómo piensas mejorar esas habilidades?",
             "¿Cuántos inscritos planeas lograr este ciclo?",
             "¿Cuántos puntos planeas lograr este ciclo?",
