@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-st.cache.clear()
+st.cache_resource.clear()
 from io import BytesIO
 
 class PlanDelCiclo:
