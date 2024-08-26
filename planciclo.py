@@ -24,7 +24,8 @@ class PlanDelCiclo:
             "¿Cuántos puntos planeas lograr este ciclo?",
             "¿Cuántos matches planeas lograr este ciclo?",
             "¿Cuál es tu meta para esta semana?",
-            "¿Cuántas citas te comprometes a hacer cada semana?"
+            "¿Cuántas citas te comprometes a hacer cada semana?",
+            ""¿De quién voy a ser runner y cada cuanto me voy a reportar con esa persona?",		
         ]
 
     def agregar_respuesta(self, pregunta, respuesta):
@@ -85,7 +86,6 @@ elif indice < len(plan_ciclo.preguntas):
         "¿Cuántos puntos planeas lograr este ciclo?",
         "¿Cuántos matches planeas lograr este ciclo?",
         "¿Cuántas citas te comprometes a hacer cada semana?",
-	"¿De quién voy a ser runner y cada cuanto me voy a reportar con esa persona?",
     ]:
         respuesta = st.number_input(pregunta_actual, value=0)
     else:
